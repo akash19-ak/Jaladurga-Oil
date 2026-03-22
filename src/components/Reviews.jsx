@@ -128,9 +128,6 @@ const Reviews = () => {
           ))}
         </div>
 
-        <div className="text-center mt-12">
-          <a href="#" className="text-primary font-bold hover:underline">View all Google Reviews</a>
-        </div>
       </div>
     </section>
   );

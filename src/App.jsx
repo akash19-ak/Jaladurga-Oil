@@ -6,6 +6,7 @@ import Products from './components/Products';
 import Services from './components/Services';
 import Gallery from './components/Gallery';
 import Reviews from './components/Reviews';
+import Location from './components/Location';
 import Footer from './components/Footer';
 import SplashScreen from './components/SplashScreen';
 import { AnimatePresence } from 'framer-motion';
@@ -27,6 +28,8 @@ function App() {
       <Services />
       <Gallery />
       <Reviews />
+      <Location />
+      <Footer />
       </main>
     </>
   );
