@@ -25,15 +25,13 @@ const SplashScreen = ({ finishLoading }) => {
       className="fixed inset-0 z-[9999] bg-white flex items-center justify-center overflow-hidden"
     >
       <motion.div
-        initial={{ scale: 0.8, opacity: 0 }}
+        initial={{ scale: 1.1, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ 
-          duration: 1.2, 
-          ease: "easeOut",
-          type: "spring",
-          bounce: 0.5
+          duration: 1.5, 
+          ease: "easeOut"
         }}
-        className="relative flex items-center justify-center"
+        className="relative flex items-center justify-center perspective-1000"
       >
         {/* Glowing backdrop animations */}
         <div className="absolute w-64 h-64 bg-primary/10 rounded-full blur-3xl animate-pulse" />
@@ -43,15 +41,14 @@ const SplashScreen = ({ finishLoading }) => {
         <motion.img 
           src="/logo.png" 
           alt="Jaladurga Cold Pressed Coconut Oil" 
-          className="w-48 md:w-64 h-auto relative z-10 drop-shadow-2xl"
-          animate={{ 
-            y: [0, -15, 0],
-            scale: [1, 1.05, 1]
-          }}
+          className="w-48 md:w-64 h-auto relative z-10 drop-shadow-[0_20px_50px_rgba(15,118,110,0.3)]"
+          initial={{ y: 40, opacity: 0, rotateX: 30 }}
+          animate={{ y: 0, opacity: 1, rotateX: 0 }}
           transition={{ 
-            duration: 3, 
-            repeat: Infinity,
-            ease: "easeInOut" 
+            duration: 1.4, 
+            type: "spring",
+            bounce: 0.3,
+            delay: 0.2
           }}
         />
       </motion.div>
