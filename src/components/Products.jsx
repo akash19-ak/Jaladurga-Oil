@@ -147,6 +147,13 @@ const Products = () => {
             </motion.div>
           ))}
         </div>
+
+        {/* Disclaimer */}
+        <div className="mt-12 text-center max-w-2xl mx-auto p-4 rounded-xl bg-primary/5 border border-primary/10">
+           <p className="text-sm text-text-muted italic">
+             <span className="font-bold text-accent">* Disclaimer:</span> As our oil is 100% pure, cold-pressed, and homemade without artificial additives, the final retail price may vary slightly depending on the current market rates of fresh raw coconuts. We never compromise on purity.
+           </p>
+        </div>
       </div>
     </section>
   );

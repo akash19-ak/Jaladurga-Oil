@@ -36,26 +36,26 @@ const Hero = () => {
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, scale: 0.8, rotate: 5 }}
+          initial={{ opacity: 0, scale: 0.8, rotate: -5 }}
           whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
-          transition={{ duration: 1, type: "spring" }}
-          className="relative perspective-1000"
+          transition={{ duration: 1.2, type: "spring", bounce: 0.4 }}
+          className="relative perspective-1000 flex justify-center items-center"
         >
-          <div className="relative z-10 floating">
-            <div className="card-3d w-[300px] h-[400px] md:w-[400px] md:h-[500px] bg-primary rounded-3xl overflow-hidden shadow-2xl transform rotate-3 relative cursor-pointer">
-               {/* Image placeholder or 3D element */}
-               <div className="absolute inset-0 bg-gradient-to-br from-primary/80 to-primary flex items-center justify-center p-8 text-center text-white transform-3d">
-                 <div className="translate-z-[30px]">
-                    <Droplet size={120} className="mb-4 text-secondary mx-auto" />
-                    <h3 className="text-3xl font-playfair">100% Homemade</h3>
-                    <p className="opacity-80">Premium Quality</p>
-                 </div>
-               </div>
-            </div>
-            {/* Accent elements */}
-            <div className="absolute -top-10 -right-10 w-40 h-40 bg-secondary rounded-full -z-10 blur-2xl opacity-50" />
-            <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-accent rounded-full -z-10 blur-2xl opacity-20" />
-          </div>
+          <motion.div 
+            className="relative z-10 floating"
+            animate={{ y: [0, -20, 0] }}
+            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+          >
+            {/* 3D Image */}
+            <img 
+              src="/coconut-3d.png" 
+              alt="Fresh Coconut Breaking" 
+              className="w-[350px] md:w-[500px] h-auto object-contain drop-shadow-2xl z-20 relative mix-blend-multiply"
+            />
+            {/* Glowing Backdrop behind the image */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[70%] h-[70%] bg-secondary/30 rounded-full blur-[60px] -z-10" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[50%] h-[50%] bg-white/50 rounded-full blur-[40px] -z-10" />
+          </motion.div>
         </motion.div>
       </div>
     </section>

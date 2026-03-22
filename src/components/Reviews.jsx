@@ -33,7 +33,7 @@ const reviews = [
     id: 2,
     name: 'Sunita H Rao',
     rating: 5,
-    comment: 'Jaladurga coconut oil is very good. I use it for cooking and hair. Highly recommended!',
+    comment: 'ಜಲದುರ್ಗ ಕೊಬ್ಬರಿ ಎಣ್ಣೆ ತುಂಬಾ ಚೆನ್ನಾಗಿದೆ. ನಾನು ಇದನ್ನು ಅಡುಗೆಗೆ ಮತ್ತು ಕೂದಲಿಗೆ ಬಳಸುತ್ತೇನೆ.',
     date: '2 weeks ago'
   },
   {
