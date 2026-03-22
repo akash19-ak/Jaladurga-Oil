@@ -27,7 +27,7 @@ const Navbar = () => {
       <div className="container flex justify-between items-center">
         {/* Logo Container */}
         <div className="flex-shrink-0">
-          <img src="/logo.png" alt="Jaladurga Logo" className={`w-auto transition-all duration-500 ${isScrolled ? 'h-12' : 'h-16'} drop-shadow-md`} />
+          <img src="/logo.png" alt="Jaladurga Logo" className={`rounded-full object-cover border-2 border-primary/10 transition-all duration-500 ${isScrolled ? 'w-12 h-12' : 'w-16 h-16'} drop-shadow-md`} />
         </div>
 
         {/* Desktop Links - Centered */}

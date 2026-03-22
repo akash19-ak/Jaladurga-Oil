@@ -38,19 +38,24 @@ const SplashScreen = ({ finishLoading }) => {
         <div className="absolute w-48 h-48 bg-accent/20 rounded-full blur-2xl animate-pulse delay-75" />
         
         {/* Pop-up Logo */}
-        <motion.img 
-          src="/logo.png" 
-          alt="Jaladurga Cold Pressed Coconut Oil" 
-          className="w-48 md:w-64 h-auto relative z-10 drop-shadow-[0_20px_50px_rgba(15,118,110,0.3)]"
-          initial={{ y: 40, opacity: 0, rotateX: 30 }}
-          animate={{ y: 0, opacity: 1, rotateX: 0 }}
-          transition={{ 
-            duration: 1.4, 
-            type: "spring",
-            bounce: 0.3,
-            delay: 0.2
-          }}
-        />
+        <motion.div
+           initial={{ opacity: 0, scale: 0.5 }}
+           animate={{ opacity: 1, scale: 1 }}
+           transition={{ duration: 0.8, type: "spring", bounce: 0.4 }}
+           className="relative z-10 drop-shadow-[0_20px_50px_rgba(15,118,110,0.3)]"
+        >
+          <motion.img 
+            src="/logo.png" 
+            alt="Jaladurga Cold Pressed Coconut Oil" 
+            className="w-48 h-48 md:w-64 md:h-64 rounded-full object-cover border-4 border-white"
+            animate={{ rotate: 360 }}
+            transition={{ 
+              duration: 8, 
+              repeat: Infinity,
+              ease: "linear"
+            }}
+          />
+        </motion.div>
       </motion.div>
     </motion.div>
   );
