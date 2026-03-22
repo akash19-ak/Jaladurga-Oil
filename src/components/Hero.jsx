@@ -16,11 +16,11 @@ const Hero = () => {
           transition={{ duration: 0.8 }}
           className="perspective-1000"
         >
-          <span className="section-subtitle block mb-4">Pure & Natural</span>
-          <h1 className="text-5xl md:text-7xl mb-6 leading-[1.1] text-3d text-primary font-playfair tracking-tight">
-            Jaladurga <br />
-            <span className="text-secondary italic">Cold Pressed</span> <br />
-            Coconut Oil
+          <span className="section-subtitle block mb-4 animate-pulse">Pure & Natural</span>
+          <h1 className="text-5xl md:text-7xl lg:text-8xl mb-6 leading-[1.1] font-['Montserrat'] tracking-tighter font-black">
+            <span className="text-accent block drop-shadow-lg">Jaladurga</span>
+            <span className="text-primary block -mt-2">Cold Pressed</span>
+            <span className="text-secondary block -mt-2">Coconut Oil</span>
           </h1>
           <p className="text-text-muted text-lg mb-8 max-w-md">
             Experience the essence of tradition with our 100% homemade, pure cold-pressed oil. Nature's goodness, harvested for your health.
@@ -41,21 +41,21 @@ const Hero = () => {
           transition={{ duration: 1.2, type: "spring", bounce: 0.4 }}
           className="relative perspective-1000 flex justify-center items-center"
         >
-          <motion.div 
-            className="relative z-10 floating"
-            animate={{ y: [0, -20, 0] }}
-            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-          >
-            {/* 3D Image */}
-            <img 
-              src="/coconut-3d.png" 
-              alt="Fresh Coconut Breaking" 
-              className="w-[350px] md:w-[500px] h-auto object-contain drop-shadow-2xl z-20 relative mix-blend-multiply"
-            />
-            {/* Glowing Backdrop behind the image */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[70%] h-[70%] bg-secondary/30 rounded-full blur-[60px] -z-10" />
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[50%] h-[50%] bg-white/50 rounded-full blur-[40px] -z-10" />
-          </motion.div>
+            {/* Video Element Setup */}
+            <div className="w-[300px] h-[300px] md:w-[450px] md:h-[450px] rounded-full overflow-hidden border-8 border-white/20 shadow-[0_0_50px_rgba(255,165,0,0.3)] relative z-20 mix-blend-normal transform transition-transform hover:scale-105">
+               <video 
+                 src="/coconut-breaking.mp4" 
+                 poster="/coconut-3d.png"
+                 autoPlay 
+                 loop 
+                 muted 
+                 playsInline
+                 className="w-full h-full object-cover scale-110"
+               />
+            </div>
+            {/* Glowing Backdrop behind the video */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] bg-accent/30 rounded-full blur-[70px] -z-10" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60%] h-[60%] bg-white/60 rounded-full blur-[50px] -z-10" />
         </motion.div>
       </div>
     </section>
