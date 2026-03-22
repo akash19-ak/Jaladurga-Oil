@@ -18,9 +18,9 @@ const Hero = () => {
         >
           <span className="section-subtitle block mb-4 animate-pulse">Pure & Natural</span>
           <h1 className="text-5xl md:text-7xl lg:text-8xl mb-6 leading-[1.1] font-['Montserrat'] tracking-tighter font-black">
-            <span className="text-accent block drop-shadow-lg">Jaladurga</span>
-            <span className="text-primary block -mt-2">Cold Pressed</span>
-            <span className="text-secondary block -mt-2">Coconut Oil</span>
+            <span className="text-primary block drop-shadow-lg">Jaladurga</span>
+            <span className="text-secondary block -mt-2">Cold Pressed</span>
+            <span className="text-primary/80 block -mt-2">Coconut Oil</span>
           </h1>
           <p className="text-text-muted text-lg mb-8 max-w-md">
             Experience the essence of tradition with our 100% homemade, pure cold-pressed oil. Nature's goodness, harvested for your health.
