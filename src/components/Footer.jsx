@@ -1,6 +1,4 @@
-import React from 'react';
 import { Phone, Mail, Instagram, Facebook, MapPin } from 'lucide-react';
-import logo from '../assets/logo.png';
 
 const Footer = () => {
   return (
@@ -9,7 +7,7 @@ const Footer = () => {
         <div className="grid md:grid-cols-4 gap-12 mb-16">
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center gap-3 mb-6">
-              <img src={logo} alt="Jaladurga" className="h-10 w-10 brightness-0 invert" />
+              <img src="/logo.png" alt="Jaladurga" className="h-10 w-10 border border-white/20 rounded-full" />
               <h3 className="text-2xl font-playfair">Jaladurga Homemade Oil</h3>
             </div>
             <p className="text-white/60 max-w-sm mb-8">

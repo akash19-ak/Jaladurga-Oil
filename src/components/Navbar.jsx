@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Menu, X, Phone, Mail } from 'lucide-react';
-import logo from '../assets/logo.png';
+import { useState, useEffect } from 'react';
+import { Menu, X, Phone } from 'lucide-react';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -26,7 +25,7 @@ const Navbar = () => {
     <nav className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'glass py-4 shadow-lg' : 'bg-transparent py-6'}`}>
       <div className="container flex justify-between items-center">
         <div className="flex items-center gap-2">
-          <img src={logo} alt="Jaladurga Logo" className="h-10 w-10 object-contain" />
+          <img src="/logo.png" alt="Jaladurga Logo" className="h-10 w-10 object-contain" />
           <span className={`text-xl font-bold tracking-tight ${isScrolled ? 'text-primary' : 'text-primary'}`}>Jaladurga</span>
         </div>
 
