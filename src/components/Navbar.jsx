@@ -23,27 +23,31 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'glass py-4 shadow-lg' : 'bg-transparent py-6'}`}>
+    <nav className={`fixed w-full z-50 transition-all duration-500 ${isScrolled ? 'bg-white/80 backdrop-blur-xl py-3 shadow-premium' : 'bg-transparent py-6'}`}>
       <div className="container flex justify-between items-center">
-        <div className="flex items-center gap-2">
-          <img src="/logo.png" alt="Jaladurga Logo" className="h-16 w-auto object-contain drop-shadow-md" />
-          <span className={`text-2xl font-playfair font-bold tracking-tight ${isScrolled ? 'text-primary' : 'text-primary'}`}>Jaladurga</span>
+        {/* Logo Container */}
+        <div className="flex-shrink-0">
+          <img src="/logo.png" alt="Jaladurga Logo" className={`w-auto transition-all duration-500 ${isScrolled ? 'h-12' : 'h-16'} drop-shadow-md`} />
         </div>
 
-        {/* Desktop Links */}
-        <div className="hidden md:flex items-center gap-8">
+        {/* Desktop Links - Centered */}
+        <div className="hidden md:flex items-center gap-10 absolute left-1/2 -translate-x-1/2">
           {navLinks.map((link) => (
             <a 
               key={link.name} 
               href={link.href} 
-              className="text-sm font-semibold hover:text-accent transition-colors uppercase tracking-wider"
+              className={`text-sm font-bold transition-all uppercase tracking-[0.15em] hover:text-secondary ${isScrolled ? 'text-primary' : 'text-primary'}`}
             >
               {link.name}
             </a>
           ))}
-          <a href="https://wa.me/9113570875" target="_blank" rel="noreferrer" className="btn-primary py-2 px-5">
-            <Phone size={18} />
-            Connect
+        </div>
+
+        {/* Contact Button */}
+        <div className="hidden md:block">
+          <a href="https://wa.me/9113570875" target="_blank" rel="noreferrer" className="btn-primary py-2.5 px-6 rounded-full text-sm tracking-wide">
+            <Phone size={16} />
+            Order Now
           </a>
         </div>
 
