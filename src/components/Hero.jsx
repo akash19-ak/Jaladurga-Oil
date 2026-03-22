@@ -16,7 +16,7 @@ const Hero = () => {
           transition={{ duration: 0.8 }}
           className="perspective-1000"
         >
-          <span className="section-subtitle block mb-4">ಶುದ್ಧ ಮತ್ತು ನೈಸರ್ಗಿಕ | Pure & Natural</span>
+          <span className="section-subtitle block mb-4">Pure & Natural</span>
           <h1 className="text-5xl md:text-7xl mb-6 leading-[1.1] text-3d text-primary font-playfair tracking-tight">
             Jaladurga <br />
             <span className="text-secondary italic">Cold Pressed</span> <br />
@@ -48,7 +48,7 @@ const Hero = () => {
                  <div className="translate-z-[30px]">
                     <Droplet size={120} className="mb-4 text-secondary mx-auto" />
                     <h3 className="text-3xl font-playfair">100% Homemade</h3>
-                    <p className="opacity-80">ಜಲದುರ್ಗ ಕೊಬ್ಬರಿ ಎಣ್ಣೆ</p>
+                    <p className="opacity-80">Premium Quality</p>
                  </div>
                </div>
             </div>

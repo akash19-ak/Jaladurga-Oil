@@ -14,8 +14,6 @@ const Footer = () => {
             <h3 className="text-4xl font-playfair mb-4 text-secondary">Jaladurga <br/> <span className="text-white italic text-3xl">Homemade Oil</span></h3>
             <p className="text-white/60 max-w-sm mb-8 leading-relaxed">
               Premium quality cold-pressed coconut oil, extracted with tradition and care. Delivering health and purity to your doorstep.
-              <br /><br />
-              <span className="font-semibold text-accent/80">ಶುದ್ಧ ಮತ್ತು ನೈಸರ್ಗಿಕ ಕೊಬ್ಬರಿ ಎಣ್ಣೆ ಪ್ರತಿ ಮನೆಗೆ.</span>
             </p>
             <div className="flex gap-4">
               <a href="#" className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center hover:bg-secondary hover:text-primary hover:border-transparent transition-all"><Instagram size={20} /></a>

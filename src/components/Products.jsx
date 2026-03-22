@@ -7,7 +7,6 @@ const products = [
   {
     id: 1,
     name: '0.5 Litre Pure Coconut Oil',
-    kannadaName: 'ಅರ್ಧ ಲೀಟರ್ ಕೊಬ್ಬರಿ ಎಣ್ಣೆ',
     price: '₹150',
     description: 'Perfect for small families and trial.',
     capacity: '500ml',
@@ -20,7 +19,6 @@ const products = [
   {
     id: 2,
     name: '1 Litre Pure Coconut Oil',
-    kannadaName: 'ಒಂದು ಲೀಟರ್ ಕೊಬ್ಬರಿ ಎಣ್ಣೆ',
     price: '₹280',
     description: 'Our best-selling home essential.',
     capacity: '1000ml',
@@ -33,7 +31,6 @@ const products = [
   {
     id: 3,
     name: '2 Litre Pure Coconut Oil',
-    kannadaName: 'ಎರಡು ಲೀಟರ್ ಕೊಬ್ಬರಿ ಎಣ್ಣೆ',
     price: '₹540',
     description: 'Value pack for larger households.',
     capacity: '2000ml',
@@ -52,7 +49,7 @@ const Products = () => {
     <section id="products" className="py-24 bg-bg-light">
       <div className="container perspective-1000">
         <SectionHeader 
-          subtitle="ನಮ್ಮ ಉತ್ಪನ್ನಗಳು | Our Products"
+          subtitle="Our Products"
           title="Pure Home Made Oil"
           description="Experience the purity and goodness of traditionally extracted coconut oil, made with love and care for your family's health."
         />
@@ -105,7 +102,6 @@ const Products = () => {
                 <div className="space-y-4">
                   <div>
                     <h3 className="text-2xl font-bold mb-1">{product.name}</h3>
-                    <p className="text-sm font-semibold text-accent group-hover:text-secondary">{product.kannadaName}</p>
                   </div>
                   
                   {/* Rating */}

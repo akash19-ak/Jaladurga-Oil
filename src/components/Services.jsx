@@ -16,15 +16,13 @@ const Services = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
-            <span className="text-secondary font-bold uppercase tracking-widest text-sm mb-4 block">ಕಸ್ಟಮ್ ಸೇವೆ | Custom Service</span>
+            <span className="text-secondary font-bold uppercase tracking-widest text-sm mb-4 block">Custom Service</span>
             <h2 className="text-4xl md:text-5xl mb-8 leading-tight">
               Bring Your Coconuts, <br />
               <span className="text-secondary italic">We'll Extract the Oil</span>
             </h2>
-            <p className="text-white/80 text-lg mb-8">
+            <p className="text-white/80 text-lg mb-8 max-w-lg">
               Want your own coconuts turned into pure oil? We offer a specialized cold-pressing service for our customers at a separate attractive rate. 
-              <br /><br />
-              ನಮ್ಮಲ್ಲಿ ಒಣ ಕೊಬ್ಬರಿ ತಂದರೆ ನಾವು ಅದರ ಎಣ್ಣೆಯನ್ನ ತೆಗೆದು ಕೊಡುತ್ತೇವೆ. ಶುದ್ಧ ಮತ್ತು ಗುಣಮಟ್ಟದ ಕೆಲಸ ನಮ್ಮ ಭರವಸೆ.
             </p>
             
             <div className="space-y-6 mb-10">

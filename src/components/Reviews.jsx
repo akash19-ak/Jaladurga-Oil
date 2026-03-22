@@ -1,6 +1,25 @@
-
-import { motion } from 'framer-motion';
+import { useEffect, useRef } from 'react';
+import { motion, useInView, useMotionValue, useTransform, animate } from 'framer-motion';
 import { Star, Users, Award, TrendingUp } from 'lucide-react';
+
+const AnimatedCounter = ({ from, to, duration = 2, suffix = "", isDecimal = false }) => {
+  const nodeRef = useRef(null);
+  const isInView = useInView(nodeRef, { once: true, margin: "-50px" });
+  const count = useMotionValue(from);
+  
+  const formatted = useTransform(count, (latest) => 
+    (isDecimal ? latest.toFixed(1) : Math.round(latest)) + suffix
+  );
+
+  useEffect(() => {
+    if (isInView) {
+      const controls = animate(count, to, { duration, ease: "easeOut" });
+      return controls.stop;
+    }
+  }, [isInView, count, to, duration]);
+
+  return <motion.span ref={nodeRef}>{formatted}</motion.span>;
+};
 
 const reviews = [
   {
@@ -14,7 +33,7 @@ const reviews = [
     id: 2,
     name: 'Sunita H Rao',
     rating: 5,
-    comment: 'ಜಲದುರ್ಗ ಕೊಬ್ಬರಿ ಎಣ್ಣೆ ತುಂಬಾ ಚೆನ್ನಾಗಿದೆ. ನಾನು ಇದನ್ನು ಅಡುಗೆಗೆ ಮತ್ತು ಕೂದಲಿಗೆ ಬಳಸುತ್ತೇನೆ.',
+    comment: 'Jaladurga coconut oil is very good. I use it for cooking and hair. Highly recommended!',
     date: '2 weeks ago'
   },
   {
@@ -27,17 +46,17 @@ const reviews = [
 ];
 
 const stats = [
-  { id: 1, label: 'Happy Customers', value: '500+', icon: <Users /> },
-  { id: 2, label: 'Average Rating', value: '4.9/5', icon: <Star /> },
-  { id: 3, label: 'Litre Sold', value: '1000+', icon: <TrendingUp /> },
-  { id: 4, label: 'Pure & Organic', value: '100%', icon: <Award /> },
+  { id: 1, label: 'Happy Customers', value: 500, suffix: '+', icon: <Users /> },
+  { id: 2, label: 'Average Rating', value: 4.9, suffix: '/5', isDecimal: true, icon: <Star /> },
+  { id: 3, label: 'Litre Sold', value: 1000, suffix: '+', icon: <TrendingUp /> },
+  { id: 4, label: 'Pure & Organic', value: 100, suffix: '%', icon: <Award /> },
 ];
 
 const Reviews = () => {
   return (
     <section id="reviews" className="py-24 bg-white">
       <div className="container">
-        {/* Stats Section */}
+        {/* Stats Section with Counters */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-24">
           {stats.map((stat) => (
             <motion.div 
@@ -49,13 +68,15 @@ const Reviews = () => {
               className="text-center p-6 rounded-2xl bg-bg-light"
             >
               <div className="text-primary mb-4 flex justify-center">{stat.icon}</div>
-              <div className="text-3xl font-bold text-primary mb-1">{stat.value}</div>
+              <div className="text-4xl font-bold text-primary mb-1">
+                 <AnimatedCounter from={0} to={stat.value} isDecimal={stat.isDecimal} suffix={stat.suffix} duration={2.5} />
+              </div>
               <div className="text-text-muted text-sm uppercase tracking-wider">{stat.label}</div>
             </motion.div>
           ))}
         </div>
 
-        <span className="section-subtitle">ಗ್ರಾಹಕರ ವಿಮರ್ಶೆ | Customer Feedback</span>
+        <span className="section-subtitle">Customer Feedback</span>
         <h2 className="section-title">What They Say About Us</h2>
 
         <div className="grid md:grid-cols-3 gap-8 perspective-1000">
