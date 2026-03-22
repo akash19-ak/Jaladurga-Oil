@@ -47,7 +47,7 @@ const Services = () => {
             </div>
 
             <a 
-              href="https://wa.me/9113570875?text=Hi! I want to know the rates for oil extraction from my coconuts." 
+              href="https://wa.me/919449592782?text=Hi! I want to know the rates for oil extraction from my coconuts." 
               target="_blank" 
               rel="noreferrer"
               className="inline-flex items-center gap-3 bg-secondary text-primary px-8 py-4 rounded-full font-bold text-lg hover:bg-white transition-colors"

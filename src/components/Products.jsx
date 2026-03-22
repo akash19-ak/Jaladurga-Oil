@@ -52,7 +52,7 @@ const products = [
 
 const ProductCard = ({ product, index }) => {
   const [quantity, setQuantity] = useState(1);
-  const whatsappNumber = '9113570875';
+  const whatsappNumber = '919449592782';
 
   const decreaseQuantity = (e) => {
     e.preventDefault();
