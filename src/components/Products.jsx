@@ -54,12 +54,16 @@ const ProductCard = ({ product, index }) => {
   const [quantity, setQuantity] = useState(1);
   const whatsappNumber = '9113570875';
 
-  const decreaseQuantity = () => {
-    if (quantity > 1) setQuantity(quantity - 1);
+  const decreaseQuantity = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    if (quantity > 1) setQuantity(q => q - 1);
   };
 
-  const increaseQuantity = () => {
-    if (quantity < 20) setQuantity(quantity + 1);
+  const increaseQuantity = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    if (quantity < 20) setQuantity(q => q + 1);
   };
 
   const totalPrice = product.basePrice * quantity;
@@ -126,22 +130,22 @@ const ProductCard = ({ product, index }) => {
           </ul>
 
           {/* Quantity Selector */}
-          <div className="flex items-center justify-between bg-bg-light group-hover:bg-primary/50 text-text-dark group-hover:text-white rounded-full p-1 mt-auto transition-colors">
-            <button onClick={decreaseQuantity} className="p-2 hover:bg-white hover:text-primary rounded-full transition-colors focus:outline-none">
-              <Minus size={16} />
+          <div className="flex items-center justify-between bg-bg-light group-hover:bg-primary/50 text-text-dark group-hover:text-white rounded-full p-1 mt-auto transition-colors z-20 relative">
+            <button type="button" onClick={decreaseQuantity} className="p-3 hover:bg-white hover:text-primary rounded-full transition-colors focus:outline-none z-30 relative touch-manipulation">
+              <Minus size={18} />
             </button>
-            <span className="font-bold px-4">{quantity}</span>
-            <button onClick={increaseQuantity} className="p-2 hover:bg-white hover:text-primary rounded-full transition-colors focus:outline-none">
-              <Plus size={16} />
+            <span className="font-bold px-4 text-lg tabular-nums">{quantity}</span>
+            <button type="button" onClick={increaseQuantity} className="p-3 hover:bg-white hover:text-primary rounded-full transition-colors focus:outline-none z-30 relative touch-manipulation">
+              <Plus size={18} />
             </button>
           </div>
 
           {/* Action Button */}
           <motion.a 
-            href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`}
+            href={`https://api.whatsapp.com/send?phone=9113570875&text=${encodeURIComponent(message)}`}
             target="_blank"
             rel="noreferrer"
-            className="block w-full py-3 mt-4 text-center border-2 border-primary text-primary hover:bg-primary hover:text-white group-hover:bg-white group-hover:text-primary group-hover:border-white font-bold rounded-full transition-all duration-300 shadow-sm hover:shadow-md"
+            className="block w-full py-3 mt-4 text-center border-2 border-primary text-primary hover:bg-primary hover:text-white group-hover:bg-white group-hover:text-primary group-hover:border-white font-bold rounded-full transition-all duration-300 shadow-sm hover:shadow-md z-20 relative"
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
           >
