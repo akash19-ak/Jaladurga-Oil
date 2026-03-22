@@ -57,13 +57,17 @@ const ProductCard = ({ product, index }) => {
   const decreaseQuantity = (e) => {
     e.preventDefault();
     e.stopPropagation();
-    if (quantity > 1) setQuantity(q => q - 1);
+    if (quantity > 1) {
+      setQuantity(quantity - 1);
+    }
   };
 
   const increaseQuantity = (e) => {
     e.preventDefault();
     e.stopPropagation();
-    if (quantity < 20) setQuantity(q => q + 1);
+    if (quantity < 50) {
+      setQuantity(quantity + 1);
+    }
   };
 
   const totalPrice = product.basePrice * quantity;
@@ -130,13 +134,13 @@ const ProductCard = ({ product, index }) => {
           </ul>
 
           {/* Quantity Selector */}
-          <div className="flex items-center justify-between bg-bg-light group-hover:bg-primary/50 text-text-dark group-hover:text-white rounded-full p-1 mt-auto transition-colors z-20 relative">
-            <button type="button" onClick={decreaseQuantity} className="p-3 hover:bg-white hover:text-primary rounded-full transition-colors focus:outline-none z-30 relative touch-manipulation">
-              <Minus size={18} />
+          <div className="flex items-center justify-between bg-gray-100 group-hover:bg-white/20 text-gray-800 group-hover:text-white rounded-full p-1.5 mt-auto transition-colors z-20 relative border border-gray-200 group-hover:border-transparent">
+            <button type="button" onClick={decreaseQuantity} className="p-3 bg-white text-primary hover:bg-accent hover:text-white shadow-sm hover:shadow-md hover:scale-105 active:scale-95 rounded-full transition-all focus:outline-none z-30 relative touch-manipulation">
+              <Minus size={18} strokeWidth={3} />
             </button>
             <span className="font-bold px-4 text-lg tabular-nums">{quantity}</span>
-            <button type="button" onClick={increaseQuantity} className="p-3 hover:bg-white hover:text-primary rounded-full transition-colors focus:outline-none z-30 relative touch-manipulation">
-              <Plus size={18} />
+            <button type="button" onClick={increaseQuantity} className="p-3 bg-white text-primary hover:bg-accent hover:text-white shadow-sm hover:shadow-md hover:scale-105 active:scale-95 rounded-full transition-all focus:outline-none z-30 relative touch-manipulation">
+              <Plus size={18} strokeWidth={3} />
             </button>
           </div>
 
