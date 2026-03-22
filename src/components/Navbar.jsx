@@ -26,8 +26,8 @@ const Navbar = () => {
     <nav className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'glass py-4 shadow-lg' : 'bg-transparent py-6'}`}>
       <div className="container flex justify-between items-center">
         <div className="flex items-center gap-2">
-          <img src="/logo.png" alt="Jaladurga Logo" className="h-10 w-10 object-contain" />
-          <span className={`text-xl font-bold tracking-tight ${isScrolled ? 'text-primary' : 'text-primary'}`}>Jaladurga</span>
+          <img src="/logo.png" alt="Jaladurga Logo" className="h-16 w-auto object-contain drop-shadow-md" />
+          <span className={`text-2xl font-playfair font-bold tracking-tight ${isScrolled ? 'text-primary' : 'text-primary'}`}>Jaladurga</span>
         </div>
 
         {/* Desktop Links */}
