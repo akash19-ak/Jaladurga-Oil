@@ -4,6 +4,7 @@ import CustomCursor from './components/CustomCursor';
 import Hero from './components/Hero';
 import Products from './components/Products';
 import Services from './components/Services';
+import Gallery from './components/Gallery';
 import Reviews from './components/Reviews';
 import Footer from './components/Footer';
 
@@ -15,6 +16,7 @@ function App() {
       <Hero />
       <Products />
       <Services />
+      <Gallery />
       <Reviews />
       <Footer />
     </main>

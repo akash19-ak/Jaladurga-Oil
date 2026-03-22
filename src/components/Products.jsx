@@ -135,12 +135,12 @@ const ProductCard = ({ product, index }) => {
 
           {/* Quantity Selector */}
           <div className="flex items-center justify-between bg-gray-100 group-hover:bg-white/20 text-gray-800 group-hover:text-white rounded-full p-1.5 mt-auto transition-colors z-20 relative border border-gray-200 group-hover:border-transparent">
-            <button type="button" onClick={decreaseQuantity} className="p-3 bg-white text-primary hover:bg-accent hover:text-white shadow-sm hover:shadow-md hover:scale-105 active:scale-95 rounded-full transition-all focus:outline-none z-30 relative touch-manipulation">
-              <Minus size={18} strokeWidth={3} />
+            <button type="button" onClick={decreaseQuantity} className="w-12 h-12 flex items-center justify-center shrink-0 bg-white text-primary hover:bg-accent hover:text-white shadow-sm hover:shadow-md hover:scale-105 active:scale-95 rounded-full transition-all focus:outline-none z-30 relative touch-manipulation">
+              <Minus size={18} strokeWidth={3} className="pointer-events-none" />
             </button>
             <span className="font-bold px-4 text-lg tabular-nums">{quantity}</span>
-            <button type="button" onClick={increaseQuantity} className="p-3 bg-white text-primary hover:bg-accent hover:text-white shadow-sm hover:shadow-md hover:scale-105 active:scale-95 rounded-full transition-all focus:outline-none z-30 relative touch-manipulation">
-              <Plus size={18} strokeWidth={3} />
+            <button type="button" onClick={increaseQuantity} className="w-12 h-12 flex items-center justify-center shrink-0 bg-white text-primary hover:bg-accent hover:text-white shadow-sm hover:shadow-md hover:scale-105 active:scale-95 rounded-full transition-all focus:outline-none z-30 relative touch-manipulation">
+              <Plus size={18} strokeWidth={3} className="pointer-events-none" />
             </button>
           </div>
 
