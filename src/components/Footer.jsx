@@ -20,10 +20,6 @@ const Footer = () => {
             <p className="text-white/70 max-w-sm mb-8 leading-relaxed">
               Premium quality cold-pressed coconut oil, extracted with tradition and care. Delivering pure health and natural aroma directly to your doorstep.
             </p>
-            <div className="flex gap-4">
-              <a href="#" className="w-10 h-10 rounded-full bg-white/5 border border-white/20 flex items-center justify-center hover:bg-secondary hover:text-primary hover:border-transparent transition-all"><Instagram size={18} /></a>
-              <a href="#" className="w-10 h-10 rounded-full bg-white/5 border border-white/20 flex items-center justify-center hover:bg-secondary hover:text-primary hover:border-transparent transition-all"><Facebook size={18} /></a>
-            </div>
           </div>
 
           <div>

@@ -28,9 +28,10 @@ const Location = () => {
                   <div>
                     <strong className="block text-gray-900 mb-1">Address</strong>
                     <p className="text-gray-600 text-sm leading-relaxed">
-                      Coastal Industrial Area,<br />
-                      Karnataka, India<br />
-                      (Near the Main Highway)
+                      "Srinivas Nilaya"<br />
+                      Jaladurga Home Made Coconut Oil<br />
+                      Ashwathkatte, Karkala<br />
+                      Karnataka 576117
                     </p>
                   </div>
                 </li>
@@ -59,7 +60,7 @@ const Location = () => {
             </div>
 
             <a 
-              href="https://maps.google.com/?q=Karnataka,India" 
+              href="https://maps.google.com/?q=13.247566,75.029010" 
               target="_blank" 
               rel="noreferrer" 
               className="mt-8 block w-full text-center bg-primary text-white py-4 rounded-xl font-bold hover:bg-secondary transition-colors shadow-md hover:shadow-lg"
@@ -71,7 +72,7 @@ const Location = () => {
           {/* Map Column */}
           <div className="lg:col-span-2 rounded-3xl overflow-hidden shadow-md border border-gray-200 bg-gray-100 min-h-[400px]">
             <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15555.518606554553!2d74.8354724!3d12.9157209!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba35a4c37bf488f%3A0x827bbc7a74fcfe64!2sKarnataka!5e0!3m2!1sen!2sin!4v1703248384950!5m2!1sen!2sin" 
+              src="https://maps.google.com/maps?q=13.247566,75.029010&hl=en&z=15&output=embed" 
               width="100%" 
               height="100%" 
               style={{ border: 0 }} 
@@ -79,7 +80,7 @@ const Location = () => {
               loading="lazy" 
               referrerPolicy="no-referrer-when-downgrade"
               title="Jaladurga Factory Location"
-              className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+              className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 relative z-10"
             ></iframe>
           </div>
 
