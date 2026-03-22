@@ -1,4 +1,4 @@
-import { Phone, Mail, Instagram, Facebook, Droplets } from 'lucide-react';
+import { Phone, Instagram, Facebook, Droplets } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -40,14 +40,10 @@ const Footer = () => {
                  <Phone className="text-secondary shrink-0 mt-1" size={20} />
                  <div>
                     <span className="block text-[10px] uppercase tracking-widest mb-1 text-white/50">WhatsApp / Call</span>
-                    <a href="https://wa.me/9113570875" target="_blank" rel="noreferrer" className="hover:text-secondary text-white font-medium">9113570875</a>
-                 </div>
-              </li>
-              <li className="flex gap-4 text-white/70 items-start">
-                 <Mail className="text-secondary shrink-0 mt-1" size={20} />
-                 <div>
-                    <span className="block text-[10px] uppercase tracking-widest mb-1 text-white/50">Email Support</span>
-                    <a href="mailto:akashn20402@gmail.com" className="hover:text-secondary text-white font-medium break-all">akashn20402@gmail.com</a>
+                    <div className="flex flex-col gap-1">
+                      <a href="https://wa.me/919449592782" target="_blank" rel="noreferrer" className="hover:text-secondary text-white font-medium">+91 94495 92782</a>
+                      <a href="tel:919743581107" className="hover:text-secondary text-white font-medium">+91 97435 81107</a>
+                    </div>
                  </div>
               </li>
             </ul>

@@ -52,7 +52,8 @@ const Location = () => {
                   <div>
                     <strong className="block text-gray-900 mb-1">Direct Contact</strong>
                     <p className="text-gray-600 text-sm">
-                      +91 91135 70875
+                      +91 94495 92782<br />
+                      +91 97435 81107
                     </p>
                   </div>
                 </li>

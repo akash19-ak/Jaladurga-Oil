@@ -45,7 +45,7 @@ const Navbar = () => {
 
         {/* Contact Button */}
         <div className="hidden md:block">
-          <a href="https://wa.me/9113570875" target="_blank" rel="noreferrer" className="btn-primary py-2.5 px-6 rounded-full text-sm tracking-wide">
+          <a href="https://wa.me/919449592782" target="_blank" rel="noreferrer" className="btn-primary py-2.5 px-6 rounded-full text-sm tracking-wide">
             <Phone size={16} />
             Order Now
           </a>
@@ -70,8 +70,8 @@ const Navbar = () => {
               {link.name}
             </a>
           ))}
-          <a href="tel:9113570875" className="flex items-center gap-2 text-primary font-bold">
-            <Phone size={20} /> 9113570875
+          <a href="https://wa.me/919449592782" className="flex items-center gap-2 text-primary font-bold">
+            <Phone size={20} /> +91 94495 92782
           </a>
         </div>
       )}
