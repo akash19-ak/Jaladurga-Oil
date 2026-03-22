@@ -90,9 +90,9 @@ const ProductCard = ({ product, index }) => {
         {product.badge}
       </motion.div>
 
-      <div className="card-3d glass p-6 md:p-8 rounded-3xl hover:bg-primary hover:text-white transition-all duration-500 shadow-premium flex flex-col h-full bg-white">
+      <div className="card-3d glass p-5 md:p-6 rounded-3xl hover:bg-primary hover:text-white transition-all duration-500 shadow-premium flex flex-col h-full bg-white">
         <motion.div 
-          className="relative mb-6 overflow-hidden rounded-2xl bg-gradient-to-br from-primary/10 to-accent/10 aspect-square"
+          className="relative mb-4 overflow-hidden rounded-2xl bg-gradient-to-br from-primary/10 to-accent/10 aspect-[4/3]"
           whileHover={{ scale: 1.05 }}
           transition={{ duration: 0.3 }}
         >
