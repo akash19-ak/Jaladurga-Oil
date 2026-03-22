@@ -4,15 +4,15 @@ import { Camera, Image as ImageIcon, Plus, X } from 'lucide-react';
 import SectionHeader from './SectionHeader';
 
 const allImages = [
-  { id: 1, title: 'Fresh Coconuts', desc: 'Premium quality coconuts sourced directly from organic farms.', span: 'md:col-span-2 md:row-span-2', height: 'h-80 md:h-full', featured: true },
-  { id: 2, title: 'Cold Press Machine', desc: 'Our traditional wooden extraction process maintaining 100% purity.', span: 'md:col-span-1 md:row-span-1', height: 'h-64', featured: true },
-  { id: 3, title: 'Pure Extraction', desc: 'Zero heat applied to keep vital nutrients intact.', span: 'md:col-span-1 md:row-span-1', height: 'h-64', featured: true },
-  { id: 4, title: 'Quality Check', desc: '', span: 'md:col-span-2 md:row-span-1', height: 'h-64', featured: true },
-  { id: 5, title: 'Bottle Packaging', desc: 'Eco-friendly and hygienic packaging process.', span: 'md:col-span-1 md:row-span-1', height: 'h-64', featured: true },
+  { id: 1, title: 'Fresh Coconuts', desc: 'Premium quality coconuts sourced directly from organic coastal farms. We ensure that every coconut is handpicked and thoroughly inspected to guarantee the highest oil yield and authentic aroma. Only the maturest coconuts make the cut for our cold-pressing process, which is why our oil is famously rich and pure.', span: 'md:col-span-2 md:row-span-2', height: 'h-80 md:h-full', featured: true },
+  { id: 2, title: 'Cold Press Machine', desc: 'Our traditional extraction process maintaining 100% purity.', span: 'md:col-span-1 md:row-span-1', height: 'h-64', featured: true },
+  { id: 3, title: 'Pure Extraction', desc: '', span: 'md:col-span-1 md:row-span-1', height: 'h-64', featured: true },
+  { id: 4, title: 'Quality Check', desc: 'Rigorous multi-stage quality control ensures no impurities slip through.', span: 'md:col-span-2 md:row-span-1', height: 'h-64', featured: true },
+  { id: 5, title: 'Bottle Packaging', desc: '', span: 'md:col-span-1 md:row-span-1', height: 'h-64', featured: true },
   // Additional images for the expanded view
   { id: 6, title: 'Factory View', desc: '', span: 'md:col-span-1 md:row-span-2', height: 'h-80' },
   { id: 7, title: 'Sun Drying', desc: 'Coconuts are sun-dried naturally without artificial roasting.', span: 'md:col-span-2 md:row-span-1', height: 'h-64' },
-  { id: 8, title: 'Filtering Process', desc: '', span: 'md:col-span-1 md:row-span-1', height: 'h-64' },
+  { id: 8, title: 'Filtering Process', desc: 'We employ a zero-heat, multi-layer microfiltration technique. This entirely mechanical phase gently separates any remaining coconut meat particles from the pure oil without ever raising the temperature. This guarantees that all naturally occurring vitamins, antioxidants, and the signature fresh fragrance are perfectly preserved in the final bottle.', span: 'md:col-span-1 md:row-span-1', height: 'h-64' },
   { id: 9, title: 'Final Product', desc: 'Crystal clear, pure coconut aroma in every drop.', span: 'md:col-span-3 md:row-span-1', height: 'h-80' },
 ];
 
@@ -105,14 +105,15 @@ const Gallery = () => {
             </div>
 
             <div className="container py-12">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {/* Masonry Layout for Variable Length Content */}
+              <div className="columns-1 md:columns-2 lg:columns-3 gap-8 space-y-8">
                 {allImages.map((img, i) => (
                   <motion.div
                     key={img.id}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: i * 0.05 }}
-                    className="bg-white rounded-2xl shadow-md border border-gray-100 overflow-hidden group flex flex-col h-full hover:shadow-xl transition-shadow duration-300"
+                    className="bg-white rounded-2xl shadow-md border border-gray-100 overflow-hidden group flex flex-col hover:shadow-xl transition-shadow duration-300 break-inside-avoid"
                   >
                     {/* Image Area */}
                     <div className="h-64 bg-gradient-to-br from-primary/5 to-accent/10 flex items-center justify-center relative overflow-hidden">
