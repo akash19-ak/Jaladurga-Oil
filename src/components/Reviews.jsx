@@ -58,7 +58,7 @@ const Reviews = () => {
         <span className="section-subtitle">ಗ್ರಾಹಕರ ವಿಮರ್ಶೆ | Customer Feedback</span>
         <h2 className="section-title">What They Say About Us</h2>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-3 gap-8 perspective-1000">
           {reviews.map((review, index) => (
             <motion.div
               key={review.id}
@@ -66,7 +66,7 @@ const Reviews = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.2 }}
               viewport={{ once: true }}
-              className="p-8 rounded-3xl border border-primary/10 hover:border-primary/30 transition-all bg-white shadow-sm"
+              className="card-3d p-8 rounded-3xl border border-primary/10 hover:border-primary/30 transition-all bg-white shadow-sm cursor-pointer"
             >
               <div className="flex gap-1 mb-4 text-secondary">
                 {[...Array(review.rating)].map((_, i) => <Star key={i} size={16} fill="currentColor" />)}

@@ -37,7 +37,7 @@ const Products = () => {
 
   return (
     <section id="products" className="py-24 bg-bg-light">
-      <div className="container">
+      <div className="container perspective-1000">
         <span className="section-subtitle">ನಮ್ಮ ಉತ್ಪನ್ನಗಳು | Our Products</span>
         <h2 className="section-title">Pure Home Made Oil</h2>
 
@@ -49,7 +49,7 @@ const Products = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="glass p-8 rounded-3xl group hover:bg-primary hover:text-white transition-all duration-500 shadow-premium"
+              className="card-3d glass p-8 rounded-3xl group hover:bg-primary hover:text-white transition-all duration-500 shadow-premium cursor-pointer"
             >
               <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-white/20 transition-colors">
                  <ShoppingCart className="text-primary group-hover:text-white" size={32} />
