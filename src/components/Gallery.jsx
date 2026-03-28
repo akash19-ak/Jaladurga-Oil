@@ -4,16 +4,13 @@ import { Camera, Image as ImageIcon, Plus, X } from 'lucide-react';
 import SectionHeader from './SectionHeader';
 
 const allImages = [
-  { id: 1, title: 'Fresh Coconuts', desc: 'Premium quality coconuts sourced directly from organic coastal farms. We ensure that every coconut is handpicked and thoroughly inspected to guarantee the highest oil yield and authentic aroma. Only the maturest coconuts make the cut for our cold-pressing process, which is why our oil is famously rich and pure.', span: 'md:col-span-2 md:row-span-2', height: 'h-80 md:h-full', featured: true },
-  { id: 2, title: 'Cold Press Machine', desc: 'Our traditional extraction process maintaining 100% purity.', span: 'md:col-span-1 md:row-span-1', height: 'h-64', featured: true },
-  { id: 3, title: 'Pure Extraction', desc: '', span: 'md:col-span-1 md:row-span-1', height: 'h-64', featured: true },
-  { id: 4, title: 'Quality Check', desc: 'Rigorous multi-stage quality control ensures no impurities slip through.', span: 'md:col-span-2 md:row-span-1', height: 'h-64', featured: true },
-  { id: 5, title: 'Bottle Packaging', desc: '', span: 'md:col-span-1 md:row-span-1', height: 'h-64', featured: true },
-  // Additional images for the expanded view
-  { id: 6, title: 'Factory View', desc: '', span: 'md:col-span-1 md:row-span-2', height: 'h-80' },
-  { id: 7, title: 'Sun Drying', desc: 'Coconuts are sun-dried naturally without artificial roasting.', span: 'md:col-span-2 md:row-span-1', height: 'h-64' },
-  { id: 8, title: 'Filtering Process', desc: 'We employ a zero-heat, multi-layer microfiltration technique. This entirely mechanical phase gently separates any remaining coconut meat particles from the pure oil without ever raising the temperature. This guarantees that all naturally occurring vitamins, antioxidants, and the signature fresh fragrance are perfectly preserved in the final bottle.', span: 'md:col-span-1 md:row-span-1', height: 'h-64' },
-  { id: 9, title: 'Final Product', desc: 'Crystal clear, pure coconut aroma in every drop.', span: 'md:col-span-3 md:row-span-1', height: 'h-80' },
+  { id: 1, src: '/gallery/coconuts.jpeg', title: 'Fresh Coconuts', desc: 'Premium quality coconuts sourced directly from organic coastal farms. Handpicked to guarantee the highest oil yield and authentic aroma.', span: 'md:col-span-2 md:row-span-2', height: 'h-80 md:h-full', featured: true },
+  { id: 2, src: '/gallery/banner.jpeg', title: 'Traditional Methods', desc: 'Our hygienic and traditional methods ensure purity at every step of extraction.', span: 'md:col-span-1 md:row-span-1', height: 'h-64', featured: true },
+  { id: 3, src: '/gallery/coconuts%20mini.jpeg', title: 'Quality Selection', desc: 'Careful selection of the finest mature coconuts before pressing.', span: 'md:col-span-1 md:row-span-1', height: 'h-64', featured: true },
+  { id: 4, src: '/gallery/containers.png', title: 'Pure Extraction', desc: 'Crystal clear extracted oil stored securely in hygienic containers.', span: 'md:col-span-2 md:row-span-1', height: 'h-64', featured: true },
+  { id: 5, src: '/gallery/oil%20bottles.jpeg', title: 'Final Packaging', desc: 'Carefully packaged and sealed pure cold-pressed coconut oil, ready to be delivered to your home.', span: 'md:col-span-1 md:row-span-1', height: 'h-64', featured: true },
+  { id: 6, src: '/gallery/bottles.jpeg', title: 'Bottled Oil', desc: 'Our famous cold pressed oil stored in high quality, food grade bottles.', span: 'md:col-span-1 md:row-span-1', height: 'h-64', featured: true },
+  { id: 7, src: '/gallery/group%20.jpeg', title: 'The Team', desc: 'Our dedicated and passionate team ensuring the best quality in every drop.', span: 'md:col-span-1 md:row-span-1', height: 'h-64', featured: true },
 ];
 
 const Gallery = () => {
@@ -40,7 +37,7 @@ const Gallery = () => {
           description="Take a visual journey through our traditional cold-pressing process. We maintain the highest standards of hygiene and purity at every step."
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 auto-rows-auto">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 auto-rows-[220px] md:auto-rows-[260px]">
           {featuredImages.map((item, index) => (
             <motion.div
               key={item.id}
@@ -48,12 +45,16 @@ const Gallery = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ delay: index * 0.1 }}
               viewport={{ once: true }}
-              className={`relative group rounded-3xl overflow-hidden cursor-pointer bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center border border-primary/5 ${item.span} ${item.height}`}
+              className={`relative group rounded-3xl overflow-hidden cursor-pointer bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center border border-primary/5 ${item.span} h-full`}
             >
-              <div className="absolute inset-0 flex flex-col items-center justify-center text-primary/40 group-hover:scale-110 transition-transform duration-700">
-                <ImageIcon size={48} className="mb-2 opacity-50" />
-                <p className="text-sm font-medium">Add Photo</p>
-              </div>
+              {item.src ? (
+                <img src={item.src} alt={item.title} className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+              ) : (
+                <div className="absolute inset-0 flex flex-col items-center justify-center text-primary/40 group-hover:scale-110 transition-transform duration-700">
+                  <ImageIcon size={48} className="mb-2 opacity-50" />
+                  <p className="text-sm font-medium">Add Photo</p>
+                </div>
+              )}
 
               <div className="absolute inset-0 bg-primary/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center z-10">
                 <div className="text-center text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 px-4">
@@ -71,7 +72,7 @@ const Gallery = () => {
             transition={{ delay: featuredImages.length * 0.1 }}
             viewport={{ once: true }}
             onClick={() => setIsOpen(true)}
-            className="relative group rounded-3xl overflow-hidden cursor-pointer bg-bg-light flex items-center justify-center border-2 border-dashed border-primary/20 hover:border-primary/50 md:col-span-1 md:row-span-1 h-64 transition-all duration-300 shadow-sm hover:shadow-md"
+            className="relative group rounded-3xl overflow-hidden cursor-pointer bg-bg-light flex items-center justify-center border-2 border-dashed border-primary/20 hover:border-primary/50 md:col-span-1 md:row-span-1 h-full w-full transition-all duration-300 shadow-sm hover:shadow-md"
           >
             <div className="flex flex-col items-center justify-center text-primary group-hover:scale-110 transition-transform duration-500">
               <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-md mb-3 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
@@ -105,20 +106,24 @@ const Gallery = () => {
             </div>
 
             <div className="container py-12">
-              {/* Masonry Layout for Variable Length Content */}
-              <div className="columns-1 md:columns-2 lg:columns-3 gap-8 space-y-8">
+              {/* Grid Layout for Perfect Horizontal Alignment */}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {allImages.map((img, i) => (
                   <motion.div
                     key={img.id}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: i * 0.05 }}
-                    className="bg-white rounded-2xl shadow-md border border-gray-100 overflow-hidden group flex flex-col hover:shadow-xl transition-shadow duration-300 break-inside-avoid"
+                    className="bg-white rounded-2xl shadow-md border border-gray-100 overflow-hidden group flex flex-col h-full hover:shadow-xl transition-shadow duration-300"
                   >
                     {/* Image Area */}
                     <div className="h-64 bg-gradient-to-br from-primary/5 to-accent/10 flex items-center justify-center relative overflow-hidden">
-                      <ImageIcon size={48} className="text-primary/20 group-hover:scale-110 transition-transform duration-500" />
-                      <div className="absolute top-2 right-2 bg-black/40 text-white text-xs px-2 py-1 rounded backdrop-blur-md">Add Photo</div>
+                      {img.src ? (
+                        <img src={img.src} alt={img.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                      ) : (
+                        <ImageIcon size={48} className="text-primary/20 group-hover:scale-110 transition-transform duration-500" />
+                      )}
+                      <div className="absolute top-2 right-2 bg-black/40 text-white text-xs px-2 py-1 rounded backdrop-blur-md">{img.title}</div>
                       <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/10 transition-colors pointer-events-none" />
                     </div>
                     

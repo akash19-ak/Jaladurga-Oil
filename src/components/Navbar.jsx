@@ -4,22 +4,35 @@ import { Menu, X, Phone } from 'lucide-react';
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activePath, setActivePath] = useState(window.location.pathname || '/');
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
+    const handleScroll = () => setIsScrolled(window.scrollY > 50);
+    const handlePathChange = () => setActivePath(window.location.pathname);
+    
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener('pathchanged', handlePathChange);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('pathchanged', handlePathChange);
+    };
   }, []);
 
+  const handleNavClick = (e, path) => {
+    e.preventDefault();
+    const id = path === '/' ? 'home' : path.substring(1);
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: 'smooth' });
+    setIsMenuOpen(false);
+  };
+
   const navLinks = [
-    { name: 'Home', href: '#home' },
-    { name: 'Products', href: '#products' },
-    { name: 'Services', href: '#services' },
-    { name: 'Gallery', href: '#gallery' },
-    { name: 'Reviews', href: '#reviews' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'Home', href: '/' },
+    { name: 'Products', href: '/products' },
+    { name: 'Services', href: '/services' },
+    { name: 'Gallery', href: '/gallery' },
+    { name: 'Reviews', href: '/reviews' },
+    { name: 'Contact', href: '/contact' },
   ];
 
   return (
@@ -27,7 +40,9 @@ const Navbar = () => {
       <div className="container flex justify-between items-center">
         {/* Logo Container */}
         <div className="flex-shrink-0">
-          <img src="/logo.png" alt="Jaladurga Logo" className={`rounded-full object-cover border-2 border-primary/10 transition-all duration-500 ${isScrolled ? 'w-12 h-12' : 'w-16 h-16'} drop-shadow-md`} />
+          <a href="/" onClick={(e) => handleNavClick(e, '/')}>
+            <img src="/logo.png" alt="Jaladurga Logo" className={`rounded-full object-cover border-2 border-primary/10 transition-all duration-500 ${isScrolled ? 'w-12 h-12' : 'w-16 h-16'} drop-shadow-md`} />
+          </a>
         </div>
 
         {/* Desktop Links - Centered */}
@@ -36,7 +51,8 @@ const Navbar = () => {
             <a 
               key={link.name} 
               href={link.href} 
-              className={`text-sm font-bold transition-all uppercase tracking-[0.15em] hover:text-secondary ${isScrolled ? 'text-primary' : 'text-primary'}`}
+              onClick={(e) => handleNavClick(e, link.href)}
+              className={`text-sm font-bold transition-all uppercase tracking-[0.15em] hover:text-secondary ${activePath === link.href ? 'text-secondary' : 'text-primary'}`}
             >
               {link.name}
             </a>
@@ -64,8 +80,8 @@ const Navbar = () => {
             <a 
               key={link.name} 
               href={link.href} 
-              className="text-lg font-bold text-primary"
-              onClick={() => setIsMenuOpen(false)}
+              className={`text-lg font-bold ${activePath === link.href ? 'text-secondary' : 'text-primary'}`}
+              onClick={(e) => handleNavClick(e, link.href)}
             >
               {link.name}
             </a>
