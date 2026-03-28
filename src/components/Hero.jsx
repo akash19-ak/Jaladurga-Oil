@@ -41,21 +41,27 @@ const Hero = () => {
           transition={{ duration: 1.2, type: "spring", bounce: 0.4 }}
           className="relative perspective-1000 flex justify-center items-center"
         >
-            {/* Video Element Setup */}
-            <div className="w-[300px] h-[300px] md:w-[450px] md:h-[450px] rounded-full overflow-hidden border-8 border-white/20 shadow-[0_0_50px_rgba(255,165,0,0.3)] relative z-20 mix-blend-normal transform transition-transform hover:scale-105">
-               <video 
-                 src="/coconut-breaking.mp4" 
-                 poster="/coconut-3d.png"
-                 autoPlay 
-                 loop 
-                 muted 
-                 playsInline
-                 className="w-full h-full object-cover scale-110"
-               />
-            </div>
-            {/* Glowing Backdrop behind the video */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] bg-accent/30 rounded-full blur-[70px] -z-10" />
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60%] h-[60%] bg-white/60 rounded-full blur-[50px] -z-10" />
+          {/* Image with Advanced Hover Effect */}
+          <motion.div 
+            className="w-[300px] h-[300px] md:w-[450px] md:h-[450px] rounded-full overflow-hidden border-8 border-white/20 shadow-[0_0_50px_rgba(255,165,0,0.3)] relative z-20 mix-blend-normal bg-white cursor-pointer"
+            whileHover={{ 
+              scale: 1.05,
+              rotate: -3,
+              boxShadow: "0px 0px 100px rgba(0,250,154,0.3)" 
+            }}
+            transition={{ type: "spring", stiffness: 300, damping: 20 }}
+          >
+             <motion.img 
+               src="/full-coconut.png" 
+               alt="A whole, intact brown coconut"
+               className="w-full h-full object-cover"
+               whileHover={{ scale: 1.15 }}
+               transition={{ duration: 0.5 }}
+             />
+          </motion.div>
+          {/* Glowing Backdrop behind the video */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] bg-accent/30 rounded-full blur-[70px] -z-10" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60%] h-[60%] bg-white/60 rounded-full blur-[50px] -z-10" />
         </motion.div>
       </div>
     </section>
