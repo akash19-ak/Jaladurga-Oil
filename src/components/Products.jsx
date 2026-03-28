@@ -11,6 +11,7 @@ const products = [
     priceStr: '₹200*',
     description: 'Perfect for small families and trial.',
     capacity: '500ml',
+    image: '/products/500ml.jpg',
     rating: 4.8,
     reviews: 124,
     badge: 'Best Seller'
@@ -22,6 +23,7 @@ const products = [
     priceStr: '₹390*',
     description: 'Our best-selling home essential.',
     capacity: '1000ml',
+    image: '/products/1ltr.jpg',
     rating: 4.9,
     reviews: 256,
     badge: 'Popular Choice'
@@ -33,6 +35,7 @@ const products = [
     priceStr: '₹780*',
     description: 'Value pack for larger households.',
     capacity: '2000ml',
+    image: '/products/2ltr.jpg',
     rating: 4.7,
     reviews: 89,
     badge: 'Best Value'
@@ -44,6 +47,7 @@ const products = [
     priceStr: '₹1950*',
     description: 'Bulk canister. Highly economical.',
     capacity: '5000ml',
+    image: '/products/5ltr.jpg',
     rating: 4.9,
     reviews: 112,
     badge: 'Bulk Saver'
@@ -96,13 +100,20 @@ const ProductCard = ({ product, index }) => {
           whileHover={{ scale: 1.05 }}
           transition={{ duration: 0.3 }}
         >
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div className="text-center p-6">
-              <Droplets className="text-primary mx-auto mb-4 drop-shadow-sm group-hover:text-white transition-colors" size={48} />
-              <p className="text-sm font-medium text-primary group-hover:text-white/90">Premium Oil</p>
-              <p className="text-xs text-primary/70 mt-1 group-hover:text-white/70">{product.capacity}</p>
+          {product.image ? (
+             <>
+               <img src={product.image} alt={product.name} className="absolute inset-0 w-full h-full object-cover transition-transform duration-500" />
+               <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/20 transition-colors pointer-events-none" />
+             </>
+          ) : (
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="text-center p-6">
+                <Droplets className="text-primary mx-auto mb-4 drop-shadow-sm group-hover:text-white transition-colors" size={48} />
+                <p className="text-sm font-medium text-primary group-hover:text-white/90">Premium Oil</p>
+                <p className="text-xs text-primary/70 mt-1 group-hover:text-white/70">{product.capacity}</p>
+              </div>
             </div>
-          </div>
+          )}
         </motion.div>
         
         <div className="flex-grow space-y-4 flex flex-col">
