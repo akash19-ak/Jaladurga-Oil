@@ -10,7 +10,7 @@ const allImages = [
   { id: 4, src: '/gallery/containers.png', title: 'Pure Extraction', desc: 'Crystal clear extracted oil stored securely in hygienic containers.', span: 'md:col-span-2 md:row-span-1', height: 'h-64', featured: true },
   { id: 5, src: '/gallery/oil%20bottles.jpeg', title: 'Final Packaging', desc: 'Carefully packaged and sealed pure cold-pressed coconut oil, ready to be delivered to your home.', span: 'md:col-span-1 md:row-span-1', height: 'h-64', featured: true },
   { id: 6, src: '/gallery/bottles.jpeg', title: 'Bottled Oil', desc: 'Our famous cold pressed oil stored in high quality, food grade bottles.', span: 'md:col-span-1 md:row-span-1', height: 'h-64', featured: true },
-  { id: 7, src: '/gallery/group%20.jpeg', title: 'The Team', desc: 'Our dedicated and passionate team ensuring the best quality in every drop.', span: 'md:col-span-1 md:row-span-1', height: 'h-64', featured: true },
+  { id: 7, src: '/gallery/group%20.jpeg', title: 'The Team', desc: 'Our team is recognized and appreciated for maintaining exceptional purity in every drop.', span: 'md:col-span-1 md:row-span-1', height: 'h-64', featured: true },
 ];
 
 const Gallery = () => {
@@ -31,7 +31,7 @@ const Gallery = () => {
   return (
     <section id="gallery" className="py-24 bg-white relative">
       <div className="container perspective-1000">
-        <SectionHeader 
+        <SectionHeader
           subtitle="Our Factory"
           title="See Our Process"
           description="Take a visual journey through our traditional cold-pressing process. We maintain the highest standards of hygiene and purity at every step."
@@ -97,7 +97,7 @@ const Gallery = () => {
           >
             <div className="sticky top-0 z-[110] bg-white/90 backdrop-blur-xl border-b border-gray-200 px-4 md:px-8 py-4 flex justify-between items-center shadow-sm">
               <h2 className="text-2xl font-bold font-['Montserrat'] text-primary">Complete Gallery</h2>
-              <button 
+              <button
                 onClick={() => setIsOpen(false)}
                 className="w-10 h-10 bg-gray-100 hover:bg-red-500 hover:text-white text-gray-800 rounded-full flex items-center justify-center transition-colors focus:outline-none shadow-sm"
               >
@@ -126,7 +126,7 @@ const Gallery = () => {
                       <div className="absolute top-2 right-2 bg-black/40 text-white text-xs px-2 py-1 rounded backdrop-blur-md">{img.title}</div>
                       <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/10 transition-colors pointer-events-none" />
                     </div>
-                    
+
                     {/* Description Area */}
                     <div className="p-6 flex-grow flex flex-col">
                       <h3 className="text-xl font-bold font-['Montserrat'] mb-2">{img.title}</h3>
