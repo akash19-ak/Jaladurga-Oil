@@ -43,7 +43,7 @@ const Hero = () => {
         >
           {/* Image with Advanced Hover Effect */}
           <motion.div 
-            className="w-[300px] h-[300px] md:w-[450px] md:h-[450px] rounded-full overflow-hidden border-8 border-white/20 shadow-[0_0_50px_rgba(255,165,0,0.3)] relative z-20 mix-blend-normal bg-white cursor-pointer"
+            className="w-[300px] h-[300px] md:w-[450px] md:h-[450px] rounded-full overflow-hidden border-8 border-white/20 shadow-[0_0_50px_rgba(255,165,0,0.3)] relative z-20 mix-blend-normal bg-white cursor-pointer group"
             whileHover={{ 
               scale: 1.05,
               rotate: -3,
@@ -51,12 +51,17 @@ const Hero = () => {
             }}
             transition={{ type: "spring", stiffness: 300, damping: 20 }}
           >
-             <motion.img 
+             {/* Base Full Coconut Image */}
+             <img 
                src="/full-coconut.png" 
                alt="A whole, intact brown coconut"
-               className="w-full h-full object-cover"
-               whileHover={{ scale: 1.15 }}
-               transition={{ duration: 0.5 }}
+               className="w-full h-full object-cover absolute inset-0 transition-opacity duration-500 ease-in-out group-hover:opacity-0 z-10"
+             />
+             {/* Flying Cracked Coconut on Hover */}
+             <img 
+               src="/cracked-coconut.png" 
+               alt="A cracked coconut breaking apart"
+               className="w-full h-full object-cover absolute inset-0 opacity-0 transition-all duration-500 ease-out group-hover:opacity-100 group-hover:scale-110 z-20"
              />
           </motion.div>
           {/* Glowing Backdrop behind the video */}
