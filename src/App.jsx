@@ -19,6 +19,10 @@ function App() {
 
   return (
     <>
+      <h1 className="sr-only">Jaladurga Pure Cold Pressed Coconut Oil in Karkala, Udupi & Mangalore - 100% Organic, Authentic South Indian Home Made Oil for Cooking, Hair, and Massage</h1>
+      <div className="sr-only">
+        Buy the best natural, unrefined, chemical-free, and traditional wood pressed coconut oil directly from the manufacturer in Karkala, Karnataka.
+      </div>
       <CustomCursor />
       <AnimatePresence>
         {isLoading && <SplashScreen finishLoading={() => setIsLoading(false)} />}
