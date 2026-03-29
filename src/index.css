@@ -273,25 +273,19 @@ a {
   position: relative;
 }
 
-.card-3d:hover {
-  transform: rotateY(5deg) rotateX(5deg) translateZ(30px) scale(1.02);
-  box-shadow: -30px 30px 60px rgba(15, 118, 110, 0.15), 
-              0 20px 40px rgba(0, 0, 0, 0.1);
-}
+/* Only apply 3D hover on devices with a mouse pointer — not on touch screens.
+   Touch activates :hover instantly and the CSS transform breaks fixed positioning
+   of portals (like the quantity bottom sheet), so we disable it on mobile. */
+@media (hover: hover) and (pointer: fine) {
+  .card-3d:hover {
+    transform: rotateY(5deg) rotateX(5deg) translateZ(30px) scale(1.02);
+    box-shadow: -30px 30px 60px rgba(15, 118, 110, 0.15), 
+                0 20px 40px rgba(0, 0, 0, 0.1);
+  }
 
-.card-3d::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
-  transform: translateZ(-1px);
-  opacity: 0;
-  transition: opacity 0.3s;
-}
-
-.card-3d:hover::before {
-  opacity: 1;
+  .card-3d:hover::before {
+    opacity: 1;
+  }
 }
 
 .text-3d {
