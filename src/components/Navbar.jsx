@@ -61,10 +61,14 @@ const Navbar = () => {
 
         {/* Contact Button */}
         <div className="hidden md:block">
-          <a href="https://wa.me/919449592782" target="_blank" rel="noreferrer" className="btn-primary py-2.5 px-6 rounded-full text-sm tracking-wide">
+          <button
+            type="button"
+            onClick={() => window.open('https://wa.me/919449592782', '_blank', 'noopener,noreferrer')}
+            className="btn-primary py-2.5 px-6 rounded-full text-sm tracking-wide cursor-pointer border-0"
+          >
             <Phone size={16} />
             Order Now
-          </a>
+          </button>
         </div>
 
         {/* Mobile Toggle */}
@@ -86,9 +90,13 @@ const Navbar = () => {
               {link.name}
             </a>
           ))}
-          <a href="https://wa.me/919449592782" className="flex items-center gap-2 text-primary font-bold">
+          <button
+            type="button"
+            onClick={() => window.open('https://wa.me/919449592782', '_blank', 'noopener,noreferrer')}
+            className="flex items-center gap-2 text-primary font-bold cursor-pointer border-0 bg-transparent"
+          >
             <Phone size={20} /> +91 94495 92782
-          </a>
+          </button>
         </div>
       )}
     </nav>

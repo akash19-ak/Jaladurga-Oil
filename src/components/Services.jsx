@@ -46,14 +46,13 @@ const Services = () => {
               </div>
             </div>
 
-            <a 
-              href="https://wa.me/919449592782?text=Hi%20Jaladurga!%20I%20have%20my%20own%20coconuts%20and%20I%20want%20to%20extract%20oil.%20What%20is%20the%20processing%20cost%2C%20and%20is%20the%20rate%20negotiable%3F" 
-              target="_blank" 
-              rel="noreferrer"
-              className="inline-flex items-center gap-3 bg-accent text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-primary transition-all duration-300 shadow-xl"
+            <button
+              type="button"
+              onClick={() => window.open('https://wa.me/919449592782?text=Hi%20Jaladurga!%20I%20have%20my%20own%20coconuts%20and%20I%20want%20to%20extract%20oil.%20What%20is%20the%20processing%20cost%2C%20and%20is%20the%20rate%20negotiable%3F', '_blank', 'noopener,noreferrer')}
+              className="inline-flex items-center gap-3 bg-accent text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-primary transition-all duration-300 shadow-xl cursor-pointer border-0"
             >
               <MessageCircle /> Get Quote on WhatsApp
-            </a>
+            </button>
           </motion.div>
 
           <motion.div

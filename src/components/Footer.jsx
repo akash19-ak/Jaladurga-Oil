@@ -41,7 +41,7 @@ const Footer = () => {
                  <div>
                     <span className="block text-[10px] uppercase tracking-widest mb-1 text-white/50">WhatsApp / Call</span>
                     <div className="flex flex-col gap-1">
-                      <a href="https://wa.me/919449592782" target="_blank" rel="noreferrer" className="hover:text-secondary text-white font-medium">+91 94495 92782</a>
+                      <button type="button" onClick={() => window.open('https://wa.me/919449592782', '_blank', 'noopener,noreferrer')} className="hover:text-secondary text-white font-medium cursor-pointer border-0 bg-transparent text-left">+91 94495 92782</button>
                       <a href="tel:919743581107" className="hover:text-secondary text-white font-medium">+91 97435 81107</a>
                     </div>
                  </div>
