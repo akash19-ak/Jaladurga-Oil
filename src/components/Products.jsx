@@ -276,16 +276,15 @@ Kindly confirm the final negotiated rate and delivery details. Thank you!`;
             </div>
 
             {/* Order button */}
-            <motion.a
-              href={`https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${encodeURIComponent(message)}`}
-              target="_blank"
-              rel="noreferrer"
-              className="block w-full py-3 text-center border-2 border-primary text-primary hover:bg-primary hover:text-white group-hover:bg-white group-hover:text-primary group-hover:border-white font-bold rounded-full transition-all duration-300 shadow-sm"
+            <motion.button
+              type="button"
+              onClick={() => window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`, '_blank', 'noopener,noreferrer')}
+              className="block w-full py-3 text-center border-2 border-primary text-primary hover:bg-primary hover:text-white group-hover:bg-white group-hover:text-primary group-hover:border-white font-bold rounded-full transition-all duration-300 shadow-sm cursor-pointer"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >
               Order ₹{totalPrice}
-            </motion.a>
+            </motion.button>
           </div>
         </div>
       </motion.div>
