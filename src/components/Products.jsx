@@ -177,7 +177,14 @@ const ProductCard = ({ product, index }) => {
   const whatsappNumber = '919449592782';
 
   const totalPrice = product.basePrice * quantity;
-  const message = `Hi! I would like to order ${quantity} ${quantity === 1 ? 'pack' : 'packs'} of ${product.name}. (Approx ₹${totalPrice}). Please confirm the final rate and delivery details.`;
+  const message = `Hi! I would like to order ${quantity} ${quantity === 1 ? 'pack' : 'packs'} of *${product.name}* (${product.capacity}).
+
+🛒 *Order Details:*
+• Product: ${product.name}
+• Quantity: ${quantity} ${quantity === 1 ? 'Pack' : 'Packs'}
+• Approx. Total: ₹${totalPrice}
+
+Kindly confirm the final negotiated rate and delivery details. Thank you!`;
 
   return (
     <>
