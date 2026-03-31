@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://jaladurgaoil.com/sitemap.xml
+Sitemap: https://jaladurgaoil.in/sitemap.xml
